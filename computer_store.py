@@ -38,10 +38,11 @@ def add_new_items_to_state(state, items_to_add, print_on=False):
         items_to_add.remove(items_to_add[0])
         add_new_items_to_state(state, items_to_add)
     
-def export_to_file(state, filename="state.txt"):
+def export_to_file(state, filename="state.txt", end="END OF FILE"):
     with open(filename, "w") as file_handle:
         for key, value in state.items():
              file_handle.write(f"{key}: {value}\n")
+        file_handle.write(end)
 
 
 def main():
