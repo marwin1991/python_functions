@@ -38,8 +38,9 @@ def add_new_items_to_state(state, items_to_add, print_on=False):
         items_to_add.remove(items_to_add[0])
         add_new_items_to_state(state, items_to_add)
     
-def export_to_file(state, filename="state.txt"):
+def export_to_file(state, filename="state.txt", header="PC STORE STATE:"):
     with open(filename, "w") as file_handle:
+        file_handle.write(f"{header}\n")
         for key, value in state.items():
              file_handle.write(f"{key}: {value}\n")
 
@@ -63,6 +64,7 @@ def main():
     print(key_order)
 
     print_state(current_state, keys_in_order=key_order)
+    export_to_file(current_state)
 
 if __name__ == "__main__":
     main()
