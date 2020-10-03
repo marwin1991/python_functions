@@ -32,6 +32,10 @@ def add_new_items_to_state(state, items_to_add):
         items_to_add.remove(items_to_add[0])
         add_new_items_to_state(state, items_to_add)
     
+def export_to_file(state, filename="state.txt"):
+    with open(filename, "w") as file_handle:
+        for key, value in state.items():
+             file_handle.write(f"{key}: {value}\n")
 
 
 def main():
@@ -40,6 +44,7 @@ def main():
     print_state(current_state, should_clear_consol=True)
     add_new_items_to_state(current_state, ["gpu", "cpu", "camera", "gpu"])
     print_state(current_state)
+    export_to_file(current_state)
 
 if __name__ == "__main__":
     main()
