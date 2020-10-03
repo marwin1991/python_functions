@@ -15,6 +15,11 @@ print(dec_to_bin(79))
 
 
 ### Piotr --> rtoiP
-def reverse_string(to_revers):
+def rec_reverse_string(to_revers):
+    """TODO"""
+    pass
+
+### n = 7 --> 1,1,2,3,5,8,13
+def rec_fib(n):
     """TODO"""
     pass
